@@ -1,0 +1,43 @@
+{
+  "pipeline": "dip-astro-v4-mse",
+  "input": "test_images/Arp070_DeepCR_Mirror_StripeFieldCorrected_DBE.fits",
+  "output": "results_runpod/Arp070_full_v4.fits",
+  "best_iteration": 19934,
+  "final_iteration": 23935,
+  "stopped_early": true,
+  "seed": 42,
+  "total_time_s": 17515.70623254776,
+  "time_per_iter_s": 0.731803059642689,
+  "device": "cuda",
+  "psnr_stretched_fit_indicator_db": 39.95695300921603,
+  "reinjected_pixels": 1545,
+  "original_range": [
+    0.0015488077187910676,
+    0.02594996722954968
+  ],
+  "params": {
+    "num_iter": 25000,
+    "learning_rate": 0.01,
+    "reg_noise_std": 0.04,
+    "percentiles": [
+      0.5,
+      99.99
+    ],
+    "psnr_stretch_beta": 0.05,
+    "psnr_interval": 100,
+    "early_stop": true,
+    "es_window": 100,
+    "es_patience": 4000,
+    "es_min_start": 1500,
+    "use_gat": true,
+    "loss_space": "gat",
+    "asinh_beta": null,
+    "gain": 1.0,
+    "read_noise": 2.0,
+    "adu_scale": 65535.0,
+    "wmv_space": "raw",
+    "grad_clip": 1.0
+  },
+  "schema_version": 1,
+  "written_at": "2026-08-04T12:01:45+0000"
+}

@@ -123,7 +123,9 @@ sharpen afterwards as usual.
 
 Background noise on these runs drops by a factor ~100 or more before
 blending; bright-star photometry stays within a fraction of a percent
-(saturated cores are re-injected from the input).
+(saturated cores are re-injected from the input). The JSON sidecar of
+every run above is in [`docs/runs/`](docs/runs/) — every parameter,
+the selected iteration, the timings.
 
 ## Honest limits
 
