@@ -1,4 +1,4 @@
-# DIPL — Deep Image Prior Linear
+# DIPL: Deep Image Prior Linear
 
 Deep Image Prior denoising that finally works on **linear** (unstretched)
 astronomical images, full frame, with photometry preserved.
@@ -10,7 +10,7 @@ has learned the structure but not yet the noise.
 ![Arp 176 before/after](docs/img/arp176_full_before_after.jpg)
 ![Arp 176 zooms](docs/img/arp176_zooms.jpg)
 
-*Arp 176 (NGC 4933), HST ACS/WFC, 2×390 s in F606W — the hardest field
+*Arp 176 (NGC 4933), HST ACS/WFC, 2×390 s in F606W, the hardest field
 of the series, it used the full 25 000-iteration budget. Same
 autostretch on both panels, computed on the input. Star-forming clumps
 and tidal debris come out of the grain intact, and the satellite trail
@@ -25,7 +25,7 @@ regions, diffraction spikes and background galaxies all survive.*
 
 ![Arp 180 zooms](docs/img/arp180_zooms.jpg)
 
-*Arp 180 — the field that motivated this work: its tidal veils sit just
+*Arp 180, the field that motivated this work: its tidal veils sit just
 under the noise floor of a 2×390 s pair and no conventional denoiser
 could recover them convincingly. Stopped by ES-WMV at iteration 18 124.*
 
@@ -124,7 +124,7 @@ sharpen afterwards as usual.
 Background noise on these runs drops by a factor ~100 or more before
 blending; bright-star photometry stays within a fraction of a percent
 (saturated cores are re-injected from the input). The JSON sidecar of
-every run above is in [`docs/runs/`](docs/runs/) — every parameter,
+every run above is in [`docs/runs/`](docs/runs/): every parameter,
 the selected iteration, the timings.
 
 ## Honest limits
@@ -135,27 +135,27 @@ the selected iteration, the timings.
   `denoise_astro_tiled.py` when the frame does not fit, and read its
   docstring first: tiles can converge to different smoothness levels.
 - Tested on mono images. Process color channels separately.
-- A cap of 18 000–25 000 iterations with ES patience 4 000 has been the
+- A cap of 18 000 to 25 000 iterations with ES patience 4 000 has been the
   sweet spot on 15 Mpx HST frames; smaller images stop much earlier.
 
 ## Files
 
-- `denoise_astro_v4_mse.py` — main engine (GAT loss, ES-WMV, grad clip)
-- `denoise_astro_v3.py` — earlier asinh-space engine, kept for reference
-- `denoise_astro_tiled.py` — tiled fallback for VRAM-limited machines
-- `check_noise_whiteness.py` — QC helper: is your residual actually noise?
-- `models/`, `utils/` — network zoo (from the original DIP repo) and
+- `denoise_astro_v4_mse.py`: main engine (GAT loss, ES-WMV, grad clip)
+- `denoise_astro_v3.py`: earlier asinh-space engine, kept for reference
+- `denoise_astro_tiled.py`: tiled fallback for VRAM-limited machines
+- `check_noise_whiteness.py`: QC helper: is your residual actually noise?
+- `models/`, `utils/`: network zoo (from the original DIP repo) and
   I/O / early-stopping / validation helpers
 
 ## Credits
 
 - D. Ulyanov, A. Vedaldi, V. Lempitsky,
-  [Deep Image Prior](https://arxiv.org/abs/1711.10925) — the original idea
+  [Deep Image Prior](https://arxiv.org/abs/1711.10925), the original idea
   and the network implementations in `models/` (Apache 2.0, see
   `NOTICE.md`).
 - H. Wang, T. Li, Z. Zhuang, T. Chen, H. Liang, J. Sun,
   [Early Stopping for Deep Image Prior](https://arxiv.org/abs/2112.06074)
-  — the ES-WMV criterion.
+  for the ES-WMV criterion.
 - Hubble data: program SNAP-15446 (PI J. Dalcanton), via MAST.
 
 My earlier notebook-era attempts live at
