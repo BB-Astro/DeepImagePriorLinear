@@ -27,7 +27,12 @@ regions, diffraction spikes and background galaxies all survive.*
 
 *Arp 180, the field that motivated this work: its tidal veils sit just
 under the noise floor of a 2×390 s pair and no conventional denoiser
-could recover them convincingly. Stopped by ES-WMV at iteration 18 124.*
+could recover them convincingly. Stopped by ES-WMV at iteration 18 124.
+Look closely at the veil crop: the faintest stars fade in the pure DIPL
+panel. Point sources at the noise level are the last thing the network
+learns, so an early stop can cut before they are all in. Allowing more
+iterations brings them back, and the final blend restores most of them
+anyway.*
 
 ![Arp 70, four methods, faint region](docs/img/arp70_4methods_zoom_faint.jpg)
 
@@ -135,6 +140,10 @@ the selected iteration, the timings.
   `denoise_astro_tiled.py` when the frame does not fit, and read its
   docstring first: tiles can converge to different smoothness levels.
 - Tested on mono images. Process color channels separately.
+- The faintest stars are the last structure the network learns. If an
+  early stop cuts before they are in, they fade in the pure output;
+  raise the iteration cap (and the ES patience) if they matter, and
+  remember the final blend re-injects part of them regardless.
 - A cap of 18 000 to 25 000 iterations with ES patience 4 000 has been the
   sweet spot on 15 Mpx HST frames; smaller images stop much earlier.
 
