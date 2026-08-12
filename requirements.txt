@@ -1,0 +1,11 @@
+# Environment: conda env "dip", python 3.13
+# Install: pip install -r requirements.txt
+torch>=2.13
+torchvision
+numpy
+scipy
+astropy
+xisf
+tifffile
+matplotlib
+pytest

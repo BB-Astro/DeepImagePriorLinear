@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+results*/
+*.fits
+*.fit
+*.xisf
+*.tif
+*.tiff
+!docs/img/*
+*.log
