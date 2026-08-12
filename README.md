@@ -29,6 +29,16 @@ regions, diffraction spikes and background galaxies all survive.*
 under the noise floor of a 2×390 s pair and no conventional denoiser
 could recover them convincingly. Stopped by ES-WMV at iteration 18 124.*
 
+![Arp 70, four methods, faint region](docs/img/arp70_4methods_zoom_faint.jpg)
+
+*Same field, four strategies: nothing, NoiseXterminator, AstroSURE (a
+Noise2Noise net trained on HST exposure pairs), DIPL blended at 40 %.
+For a fair comparison every panel is affine-matched to the reference
+photometric frame (fit on galaxy-body pixels) and displayed with the
+same MTF autostretch computed on the reference. Full-frame and
+galaxy-core versions: [full](docs/img/arp70_4methods_full.jpg),
+[core](docs/img/arp70_4methods_zoom_core.jpg).*
+
 ## Why this repo exists
 
 [Deep Image Prior](https://arxiv.org/abs/1711.10925) (Ulyanov et al. 2018)
