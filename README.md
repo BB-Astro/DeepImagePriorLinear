@@ -11,7 +11,7 @@ has learned the structure but not yet the noise.
 ![Arp 176 zooms](docs/img/arp176_zooms.jpg)
 
 *Arp 176 (NGC 4933), HST ACS/WFC, 2×390 s in F606W, the hardest field
-of the series, it used the full 25 000-iteration budget. Same
+of the series: it used the full 25 000-iteration budget. Same
 autostretch on both panels, computed on the input. Star-forming clumps
 and tidal debris come out of the grain intact, and the satellite trail
 in the full frame survives untouched: real structure stays, only the
